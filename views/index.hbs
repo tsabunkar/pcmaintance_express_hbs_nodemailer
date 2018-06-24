@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    {{!-- first css shld be loaded then JS --}} {{!-- cdn link of getbootstrap CSS--}} {{!--
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous"> --}} {{!-- external file link --}}
+
+    <link rel="stylesheet" href="../css/getbootstrap.min.css"> {{!-- cdn link of getbootstrap JS --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    {{>header}}
+    <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Computer Not Working?</h1>
+                <p>How much important data does your laptop or desktop have? We know your laptop or desktop is very important
+                    to you! Our door-step experts can come to the rescue quickly if something suddenly goes wrong with your
+                    computer. Book a service for any location in Bengaluru to ensure that your laptop or desktop is conveniently
+                    repaired without causing yourself anymore stress. Save your precious equipment because, everything broken
+                    or everything that malfunctions, can be repaired easily and conveniently by our experts!
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Virus Removal</h2>
+                    <p>We are certified IT experts for computer related services. We are working with customer from 2010 by
+                        offering services like computer repair, installations, maintenance services in bangalore. We are
+                        the best computer repair shop near by you in bangalore.
+                        <p class="collapse" id="collapseExample">
+                            My customers says "You have the best engineers in your center and cost effective when I compared with other computer repair
+                            shop near me" We undertake and fix all kind computer related problems. Computer AMC in bangalore
+                            (Annual Maintenance): We keep your computer updated and secured from viruses and hackers, because
+                            we have seen 90% of computers are installed by users without being aware of. We protect your
+                            computer from users to use only recommended softwares. 100% Genuine paid software</p>
+                    </p>
+                    <p>
+                        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            View details &raquo;
+                        </a>
+                    </p>
+                </div>
+
+
+                <div class="col-md-4">
+                    <h2>Hardware Issues</h2>
+                    <p>The computer is an electronic device which has many parts installed in it. Just like other electronic
+                        device working or moving parts may break down at anytime similarly computer hardware can also fail
+                        at any time? PC hardware is the most major parts in building a PC.
+                        <p class="collapse" id="collapseExample2">
+                            If hardware fails then you cannot run or work on your PC. You have to hire computer experts or technical engineer to repair
+                            them. No one can guarantee what kind of problems can enter into your PC at what time. Here I
+                            will explain some of the PC hardware issue and their solution.</p>
+                    </p>
+                    <p>
+                        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            View details &raquo;
+                        </a>
+                    </p>
+                </div>
+
+
+                <div class="col-md-4">
+                    <h2>Software Issues</h2>
+                    <p>Laptop Service Center in Bangalore located at Electronic City, We are professional and specializes as
+                        sate wise leader in the all brand laptops (such as Dell, Hp, Lenovo, Acer, Apple, Toshiba, Asus,
+                        Samsung etc.,) combining the special knowledge, certified technicians, genuine
+                        <p class="collapse" id="collapseExample3">
+                            spare parts and equipments to provide you with the best, most affordable, and fastest services as possible Laptop Service
+                            In Bangalore specialists in laptop hard disk data recovery, broken laptop rework, spare parts
+                            upgrade, motherboard chiplevel service. Is your laptop hardware/software component defective
+                            or do you experience symptoms such as blue-screen errors, regular freezing and frequent restarts?
+                            Or is your laptop or desktop computer infected with a virus? Contact us to resolve every kind
+                            of laptop problems. We assure you we are best of it. visit our laptop service gbs bangalore center
+                            and get your laptop fixed, also we provide genuine spare parts with manufacturer warranty at
+                            best price</p>
+                    </p>
+                    <p>
+                        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            View details &raquo;
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+
+        {{>footer}}
+    </main>
+</body>
+
+</html>

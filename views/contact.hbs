@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+      <title>{{title}}</title>
+    <link rel="stylesheet" href="../css/getbootstrap.min.css"> {{!--
+    <link rel="stylesheet" href="../css/style.css"> --}}
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <form action="/contact/send" method="POST">
+            <h1>Contact</h1>
+            <label for="inputNameLabel">Name</label>
+            <input class="form-control" type="text" id="inputNameLabel" name="nameId" placeholder="Full Name" />
+            <div class="form-group">
+                <label for="inputEmailLabel">Email address</label>
+                <input type="email" class="form-control" id="inputEmailLabel" name="emailId" aria-describedby="emailHelp" placeholder="name@example.com">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="inputTextareaLabel">Message</label>
+                <textarea class="form-control" id="inputTextareaLabel" name="messageId" rows="3"></textarea>
+            </div>
+            <div class="btn-group" role="group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+    {{>footer}}
+    </main>
+</body>
+
+</html>
