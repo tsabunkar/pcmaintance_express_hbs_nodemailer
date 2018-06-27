@@ -5,7 +5,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const hbs = require('hbs');
+const flash = require('connect-flash');
+const session = require('express-session');
+
 const port = process.env.PORT;
+
 
 
 var app = express();
@@ -20,6 +24,19 @@ app.use(express.static(path.join(__dirname + '/../public')))
 app.set('views', path.join(__dirname, '/../views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname + '/../views/partials'))
+
+//middleware for sessions
+app.use(session({ cookie: { maxAge: 60000 }, 
+    secret: 'woot',
+    resave: false, 
+    saveUninitialized: false}));
+    
+//middleware for showing alerts(sucess, failure for sending message)
+app.use(flash());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 
 
 
@@ -42,7 +59,9 @@ app.get('*', (request, response, next) => {
 //if u want to redirect to views/index.hbs then
 app.get('/', (request, response) => {
     response.render('index.hbs', {
-        title: 'Home'
+        title: 'Home',
+        success_messages: request.flash('success'),
+        failure_messages: request.flash('failure')
     });
 });
 app.get('/contact', (request, response) => {
@@ -84,11 +103,14 @@ app.post('/contact/send', (request, response) => {
 
     }
 
+
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
+            request.flash('failure', 'Your message is NOT send,Please try after sometime');
             console.log(err);
             response.redirect('/')
         } else {
+            request.flash('success', 'Your message is send, our team will contact u soon');
             console.log(`Message sent ${info.response}`);
             response.redirect('/')
         }

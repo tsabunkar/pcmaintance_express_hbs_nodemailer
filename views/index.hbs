@@ -20,6 +20,15 @@
 
 <body>
     {{>header}}
+     {{#if success_messages}}
+    <div class="alert alert-success">
+        <strong>Success!</strong>{{{success_messages}}}
+    </div>
+    {{else if failure_messages}}
+     <div class="alert alert-danger">
+        <strong>Failure!</strong>{{{failure_messages}}}
+    </div>
+    {{/if}}
     <main role="main">
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
